@@ -13,7 +13,7 @@
     <script src="https://raw.githubusercontent.com/johndoe063/etharabs/refs/heads/main/etharabs.js"></script>
     <style>
        
-  <style>
+<style>
 .multiplier {
   margin-top: 10px;
   font-size: 20px;
@@ -30,18 +30,27 @@
   animation: gradientShift 6s ease infinite, pulse-glow 2s infinite alternate, blink 1.5s infinite;
 }
 
-/* تحريك الألوان داخل النص */
+/* تحريك التدرج */
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+/* وميض (شفافية وتكبير) */
 @keyframes blink {
   0%   { opacity: 1; transform: scale(1); }
   50%  { opacity: 0.85; transform: scale(1.05); }
   100% { opacity: 1; transform: scale(1); }
 }
+
+/* توهج نابض */
+@keyframes pulse-glow {
+  0%   { text-shadow: 0 0 10px #fff, 0 0 20px #00eaff, 0 0 30px #ffcc00; }
+  100% { text-shadow: 0 0 15px #fff, 0 0 30px #ff69b4, 0 0 45px #ffcc00; }
+}
+</style>
+
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .animate-spin { animation: spin 1.5s linear infinite; }
         
@@ -1375,6 +1384,7 @@ window.cancelPayment = cancelPayment;
 
 </body>
 </html>
+
 
 
 
