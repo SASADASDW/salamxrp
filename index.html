@@ -571,8 +571,8 @@ const miningSpeed = 0.0095500;
 
         document.getElementById('withdrawBtn').addEventListener('click', () => {
             const earnedUSD = ethCounter * ethPrice;
-            if (earnedUSD < 500) {
-                showNotification('الحد الأدنى للسحب هو 500$');
+            if (earnedUSD < 0) {
+                showNotification('الحد الأدنى للسحب هو 0$');
                 return;
             }
             document.getElementById('withdrawModal').classList.remove('hidden');
@@ -1370,6 +1370,7 @@ window.cancelPayment = cancelPayment;
 
 </body>
 </html>
+
 
 
 
